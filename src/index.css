@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Theme-aware colors using CSS variables */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  
+  --color-border-primary: var(--border-primary);
+  
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+}
+
+/* ============================================
+   THEME SYSTEM - CSS Variables
+   ============================================ */
+
+/* Default Theme: Lineous (existing futuristic dark purple) */
+.theme-lineous {
+  --bg-primary: #050505;
+  --bg-secondary: #000000;
+  --bg-card: #000000;
+  
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.60);
+  --text-muted: rgba(255, 255, 255, 0.40);
+  
+  --border-primary: rgba(255, 255, 255, 0.10);
+  
+  --accent-primary: #a855f7;
+  --accent-secondary: #6366f1;
+  
+  --accent-gradient: linear-gradient(to right, #c084fc, #a855f7, #6366f1);
+  
+  --glow-purple: rgba(88, 28, 135, 0.10);
+  --glow-indigo: rgba(49, 46, 129, 0.10);
+  --glow-accent: rgba(168, 85, 247, 0.15);
+}
+
+/* Dark Theme - Classic dark mode */
+.theme-dark {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #171717;
+  --bg-card: #1c1c1c;
+  
+  --text-primary: #fafafa;
+  --text-secondary: rgba(250, 250, 250, 0.70);
+  --text-muted: rgba(250, 250, 250, 0.50);
+  
+  --border-primary: rgba(250, 250, 250, 0.08);
+  
+  --accent-primary: #3b82f6;
+  --accent-secondary: #8b5cf6;
+  
+  --accent-gradient: linear-gradient(to right, #3b82f6, #6366f1, #8b5cf6);
+  
+  --glow-purple: rgba(59, 130, 246, 0.08);
+  --glow-indigo: rgba(139, 92, 246, 0.08);
+  --glow-accent: rgba(59, 130, 246, 0.10);
+}
+
+/* Light Theme - Clean light mode */
+.theme-light {
+  --bg-primary: #fafafa;
+  --bg-secondary: #f5f5f5;
+  --bg-card: #ffffff;
+  
+  --text-primary: #171717;
+  --text-secondary: rgba(23, 23, 23, 0.70);
+  --text-muted: rgba(23, 23, 23, 0.50);
+  
+  --border-primary: rgba(23, 23, 23, 0.08);
+  
+  --accent-primary: #7c3aed;
+  --accent-secondary: #2563eb;
+  
+  --accent-gradient: linear-gradient(to right, #7c3aed, #8b5cf6, #2563eb);
+  
+  --glow-purple: rgba(124, 58, 237, 0.08);
+  --glow-indigo: rgba(37, 99, 235, 0.08);
+  --glow-accent: rgba(124, 58, 237, 0.10);
+}
+
+/* Futuristic Theme - Enhanced neon cyberpunk */
+.theme-futuristic {
+  --bg-primary: #030014;
+  --bg-secondary: #0a001a;
+  --bg-card: #120024;
+  
+  --text-primary: #e0e7ff;
+  --text-secondary: rgba(224, 231, 255, 0.70);
+  --text-muted: rgba(224, 231, 255, 0.50);
+  
+  --border-primary: rgba(192, 132, 252, 0.15);
+  
+  --accent-primary: #c084fc;
+  --accent-secondary: #22d3ee;
+  
+  --accent-gradient: linear-gradient(to right, #c084fc, #a855f7, #22d3ee, #6366f1);
+  
+  --glow-purple: rgba(192, 132, 252, 0.25);
+  --glow-indigo: rgba(34, 211, 238, 0.20);
+  --glow-accent: rgba(192, 132, 252, 0.30);
+  
+  /* Extra neon effects for futuristic theme */
+  --neon-pink: #f0abfc;
+  --neon-cyan: #22d3ee;
+  --neon-purple: #a855f7;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Selection color based on theme */
+::selection {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}

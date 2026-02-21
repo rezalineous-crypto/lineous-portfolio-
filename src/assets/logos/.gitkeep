@@ -1,0 +1,10 @@
+# Place your logo files here
+# Supported formats: SVG, PNG, JPEG, WebP
+#
+# Usage example with SVG:
+# import LogoSvg from './assets/logos/logo.svg';
+# <Logo type="svg" logoSrc={<LogoSvg />} />
+#
+# Usage example with image:
+# import LogoPng from './assets/logos/logo.png';
+# <Logo type="image" imageSrc={LogoPng} />
