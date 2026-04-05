@@ -7,7 +7,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--text-muted)] uppercase tracking-widest font-mono">
           <Logo variant="full" type="image" imageSrc={lineousLogo} />
-          <div>© 2026 Lineous Technologies.heeloasdf All rights reserved.</div>
+          <div>© 2026 Lineous Technologies. All rights reserved.</div>
         </div>
       </div>
     </footer>
