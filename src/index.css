@@ -155,3 +155,9 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-primary);
 }
+/* .gradient-text{
+  background: linear-gradient(180deg, #2e27fe 0%, #9a12ff 100%)!important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+} */
