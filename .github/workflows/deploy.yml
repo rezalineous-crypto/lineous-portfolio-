@@ -19,12 +19,12 @@ jobs:
           if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
             echo "ENV=production" >> $GITHUB_ENV
             echo "PORT=3022" >> $GITHUB_ENV
-            echo "TAG=frontend-manajir-prod" >> $GITHUB_ENV
+            echo "TAG=frontend-linous-portfolio-prod" >> $GITHUB_ENV
             echo "COMPOSE_FILE=docker-compose.prod.yml" >> $GITHUB_ENV
           else
             echo "ENV=development" >> $GITHUB_ENV
             echo "PORT=3024" >> $GITHUB_ENV
-            echo "TAG=frontend-manajir-dev" >> $GITHUB_ENV
+            echo "TAG=frontend-linous-portfolio-dev" >> $GITHUB_ENV
             echo "COMPOSE_FILE=docker-compose.dev.yml" >> $GITHUB_ENV
           fi
 
@@ -57,6 +57,6 @@ jobs:
           script: |
             whoami
             hostname
-            cd /var/www/manajirOriginals-frontend
+            cd /var/www/lineous-portfolio-
             docker pull lineousreza/lineousrepo:${{ env.TAG }}
             docker compose -f ${{ env.COMPOSE_FILE }} up -d
