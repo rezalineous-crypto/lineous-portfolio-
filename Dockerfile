@@ -13,36 +13,22 @@ COPY . .
 ARG NODE_ENV
 ENV ENVIRONMENT=$NODE_ENV
 
-RUN echo "========================"
-RUN echo "ENVIRONMENT=$ENVIRONMENT"
-
 RUN if [ "$ENVIRONMENT" = "production" ]; then \
-      echo "Using production env"; \
       cp .env.production .env; \
     else \
-      echo "Using development env"; \
       cp .env.development .env; \
     fi
 
-RUN echo "Contents of .env:"
-RUN cat .env || echo "File missing!"
-
-RUN echo "Starting Vite build..."
 RUN npm run build
 
 # =========================
-# Stage 2: Runner
+# Stage 2: Nginx Runner
 # =========================
-FROM node:20-alpine AS runner
+FROM nginx:alpine AS runner
 
-WORKDIR /app
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/index.html /usr/share/nginx/html
 
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/index.html ./
+EXPOSE 80
 
-
-EXPOSE 4173
-
-CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]
+CMD ["nginx", "-g", "daemon off;"]
