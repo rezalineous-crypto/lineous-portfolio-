@@ -58,5 +58,7 @@ jobs:
             whoami
             hostname
             cd /var/www/lineous-portfolio-
+          
+            docker compose -f ${{ env.COMPOSE_FILE }} rm -f
             docker pull lineousreza/lineousrepo:${{ env.TAG }}
             docker compose -f ${{ env.COMPOSE_FILE }} up -d
