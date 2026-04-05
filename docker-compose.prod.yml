@@ -1,0 +1,9 @@
+services:
+  frontend-prod:
+    image: lineousreza/lineousrepo:frontend-linous-portfolio-prod
+    container_name: frontend-linous-portfolio-prod
+    restart: always
+    ports:
+      - "3022:4173"
+    environment:
+      - NODE_ENV=production
