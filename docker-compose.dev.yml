@@ -4,6 +4,6 @@ services:
     container_name: frontend-linous-portfolio-dev
     restart: always
     ports:
-      - "3024:4173"
+      - "3024:80"
     environment:
       - NODE_ENV=
