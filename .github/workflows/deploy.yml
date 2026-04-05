@@ -60,5 +60,5 @@ jobs:
             cd /var/www/lineous-portfolio-
           
             docker rm -f frontend-linous-portfolio-prod || true
-            docker pull lineousreza/lineousrepo:${{ env.TAG }}
+           
             docker compose -f ${{ env.COMPOSE_FILE }} up -d
