@@ -35,9 +35,10 @@ export function ComparisonSection() {
                 <th className="text-center py-4 px-6">
                   <div className="text-lg font-bold">Starter</div>
                   <div className="text-sm text-[var(--text-muted)]">$999/mo</div>
+                  
                 </th>
 
-                
+
                 <th className="text-center py-4 px-6">
                   <div className="text-lg font-bold text-[var(--accent-primary)]">Growth</div>
                   <div className="text-sm text-[var(--text-muted)]">$2,499/mo</div>
